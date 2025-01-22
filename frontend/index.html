@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Jogo</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Scripts de Phaser e Socket.IO -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+</head>
+<body>
+    <!-- Tela inicial com o botão "Jogar" -->
+    <button id="jogar-btn">Jogar</button>
+
+    <!-- Formulário de login, inicialmente escondido -->
+    <div class="login-container">
+        <h2>Entrar no Jogo</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" placeholder="Nome de usuário" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <span id="togglePassword" class="toggle-password">👁️</span>
+                </div>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script src="script.js" defer></script> 
+</body>  
+</html>
