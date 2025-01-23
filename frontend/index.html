@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,13 +10,14 @@
     <!-- Scripts de Phaser e Socket.IO -->
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
     <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+
 </head>
 <body>
     <!-- Tela inicial com o botão "Jogar" -->
     <button id="jogar-btn">Jogar</button>
 
     <!-- Formulário de login, inicialmente escondido -->
-    <div class="login-container">
+    <div class="login-container" style="display: none;">
         <h2>Entrar no Jogo</h2>
         <form id="loginForm">
             <div class="input-group">
@@ -33,6 +35,43 @@
         </form>
     </div>
 
-    <script src="script.js" defer></script> 
-</body>  
+    <!-- Tela de seleção de personagem -->
+    <div class="character-selection" style="display: none;">
+        <h2>Escolha seu Personagem</h2>
+        <div id="personagens-container">
+            <!-- Os personagens do usuário serão carregados aqui -->
+        </div>
+        <button id="voltar-login">Voltar</button>
+    </div>
+
+    <!-- Modal de criação de personagem -->
+    <div id="create-character-modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Criar Personagem</h2>
+            <form id="createCharacterForm">
+                <div class="input-group">
+                    <label for="character-name">Nome do Personagem</label>
+                    <input type="text" id="character-name" required>
+                </div>
+                <div class="input-group">
+                    <label>Gênero</label>
+                    <div class="gender-options">
+                        <label>
+                            <input type="radio" name="gender" value="Masculino" required>
+                            Masculino
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="Feminino" required>
+                            Feminino
+                        </label>
+                    </div>
+                </div>
+                <button type="button" id="create-character-btn">Criar</button>
+                <button type="button" id="cancel-creation-btn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
 </html>
